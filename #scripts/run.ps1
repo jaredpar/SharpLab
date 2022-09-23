@@ -13,4 +13,6 @@ $tags = @('--tags', 'server')
 if (!$ServerOnly) { $tags += @('--tags', 'assets') }
 if (!$NoCache) { $tags += @('--tags', 'cache') }
 
+Create-Directory "!azurite" | Out-Null
+
 dotnet tye run --watch @tags
